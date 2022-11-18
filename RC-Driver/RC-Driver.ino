@@ -43,16 +43,16 @@ const byte address[6] = "00501";
 const uint8_t  channel = ___; // [TODO]: Replace this blank with your team number
 
 // Pin Definitions
-#define in1L ___  // Left L298, Pin IN1
-#define in2L ___  // Left L298, Pin IN2
-#define in3L ___  // Left L298, Pin IN3
-#define in4L ___  // Left L298, 
-#define in1R ___
-#define in2R ___
-#define in3R ___
-#define in4R ___
-#define enL ___
-#define enR ___
+#define in1L ___  // Left L298N, Pin IN1
+#define in2L ___  // Left L298N, Pin IN2
+#define in3L ___  // Left L298N, Pin IN3
+#define in4L ___  // Left L298N, Pin IN4
+#define in1R ___  // Right L298N, Pin IN1
+#define in2R ___  // Right L298N, Pin IN2
+#define in3R ___  // Right L298N, Pin IN3
+#define in4R ___  // Right L298N, Pin IN4
+#define enL ___   // Left L298N, Pin ENA/B
+#define enR ___   // Right L298N, Pin ENA/B
 
 // Max size 32 bytes because of buffer limit
 struct CMD_Packet {
