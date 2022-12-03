@@ -43,16 +43,15 @@ const byte address[6] = "00501";
 const uint8_t  channel = ___; // [TODO]: Replace this blank with your team number
 
 // Pin Definitions
-#define in1L ___  // Left L298N, Pin IN1
-#define in2L ___  // Left L298N, Pin IN2
-#define in3L ___  // Left L298N, Pin IN3
-#define in4L ___  // Left L298N, Pin IN4
-#define in1R ___  // Right L298N, Pin IN1
-#define in2R ___  // Right L298N, Pin IN2
-#define in3R ___  // Right L298N, Pin IN3
-#define in4R ___  // Right L298N, Pin IN4
-#define enL ___   // Left L298N, Pin ENA/B
-#define enR ___   // Right L298N, Pin ENA/B
+#define in1L 0  // Left L298N, Pin IN1
+#define in2L 1  // Left L298N, Pin IN2
+#define in3L 2  // Left L298N, Pin IN3
+#define in4L 3  // Left L298N, Pin IN4
+#define in1R 4  // Right L298N, Pin IN1
+#define in2R 5  // Right L298N, Pin IN2
+#define in3R 6  // Right L298N, Pin IN3
+#define in4R 9  // Right L298N, Pin IN4
+#define en 10   // Both L298N, Pin ENA/B
 
 // Max size 32 bytes because of buffer limit
 struct CMD_Packet {
@@ -105,12 +104,6 @@ void setup() {
   radio.setChannel(channel);
   Serial.println("Starting Radio"); 
 
-  // Check for OLED Availability
-  if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { // Address 0x3D for 128x64
-    Serial.println(F("SSD1306 allocation failed"));
-    for(;;);
-  }
-
   //to recieve
   radio.startListening();
 }
@@ -128,7 +121,6 @@ void loop() {
   */
   
   if (radio.available()) {
-    conn = true;
     radio.read(&packet, sizeof(packet));
 
     // Used to test the motor orientation (calibration)
