@@ -84,8 +84,8 @@ void setup() {
   pinMode(in2R, ___);
   pinMode(in3R, ___);
   pinMode(in4R, ___);
-  pinMode(enL, ___);
-  pinMode(enR, ___);
+  pinMode(en, ___);
+
 
   // Set up default state (On startup, none of the motors should be on!)
   digitalWrite(in1L, LOW);
