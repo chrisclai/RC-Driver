@@ -55,6 +55,9 @@ void setup() {
 
 void loop() 
 { 
+  
+  //put line following logic here!
+  // digital reads? when should you go forward()?
 
 }
 
